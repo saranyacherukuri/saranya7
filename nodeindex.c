@@ -14,7 +14,7 @@ void delete(struct node **);
 int main()
 {
     struct node *head = NULL;
-    int key, num,t;
+    int key, num,val;
  
     printf("Enter the number of nodes: ");
     scanf("%d", &num);
@@ -22,9 +22,9 @@ int main()
     generate(&head, num);
     printf("\nEnter key to search: ");
     scanf("%d", &key);
-    t=search(head, key);
+    val=search(head, key);
     delete(&head);
-    printf("%d",t);
+    printf("%d",val);
  
     return 0;
 }
@@ -54,7 +54,7 @@ void generate(struct node **head, int num)
  
 void search(struct node *head, int key)
 {
-    int count;
+    int count=0;
     while (head != NULL)
     {
         if (head->a == key)
